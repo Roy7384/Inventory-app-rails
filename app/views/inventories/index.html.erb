@@ -1,1 +1,9 @@
-<h1>Inventories will show up here</h1>
+<h1>Inventories</h1>
+
+<ul>
+  <% @inventories.each do |inventory| %>
+    <li>
+      <%= inventory.product %>
+    </li>
+  <% end %>
+</ul>

@@ -1,9 +1,18 @@
 <h1>Inventories</h1>
 <%= link_to '+ New Inventory', new_inventory_path %>
-<ul>
-  <% @inventories.each do |inventory| %>
-    <li>
-      <%= inventory.product %>
-    </li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @inventories.each do |inventory| %>
+    <tr>
+      <td><%= inventory.product %></td>
+      <td><%= inventory.quantity %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

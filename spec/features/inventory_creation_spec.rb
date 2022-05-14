@@ -9,7 +9,7 @@ RSpec.feature "Inventory creation", type: :feature do
     fill_in "Product", with: "Water bottle"
     click_link_or_button "Create Inventory"
 
-    expect(page).to have_content("Inventory created")
+    expect(page).to have_content("Inventories")
     expect(page).to have_content("Water bottle")
   end
 end

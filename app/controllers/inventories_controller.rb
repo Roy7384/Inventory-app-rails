@@ -9,6 +9,7 @@ class InventoriesController < ApplicationController
 
   def create 
     @inventory = Inventory.create(inventory_params)
+    redirect_to inventories_path(@inventory)
   end
 
   private

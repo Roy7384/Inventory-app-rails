@@ -7,6 +7,7 @@ RSpec.feature "Inventory creation", type: :feature do
 
   it "saves the inventory properly and displays it to the user" do
     fill_in "Product", with: "Water bottle"
+    fill_in "Quantity", with: 10
     click_link_or_button "Create Inventory"
 
     expect(page).to have_content("Inventories")

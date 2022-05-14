@@ -4,4 +4,14 @@
   <%= f.label :quantity %>
   <%= f.text_field :quantity %>
   <%= f.submit %>
+  <% if f.object.errors.any? %>
+    <div>
+      <strong>The following errors prevented creating new inventory:</strong>
+      <ul>
+        <% f.object.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
 <% end %>

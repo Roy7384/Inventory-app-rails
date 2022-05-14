@@ -12,7 +12,11 @@ class InventoriesController < ApplicationController
 
   def create 
     @inventory = Inventory.create(inventory_params)
-    redirect_to inventories_path(@inventory)
+    if @inventory.save
+      redirect_to inventories_path(@inventory), notice: 'Inventory created!'
+    else
+      render :new
+    end
   end
 
   private

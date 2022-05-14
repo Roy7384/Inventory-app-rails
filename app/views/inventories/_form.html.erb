@@ -3,7 +3,7 @@
   <% if @inventory.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@article.errors.count, "error") %>
+        <%= pluralize(@inventory.errors.count, "error") %>
           prohibited this inventory from being saved:
       </h2>
       <ul>

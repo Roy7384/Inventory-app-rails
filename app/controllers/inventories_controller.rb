@@ -23,6 +23,16 @@ class InventoriesController < ApplicationController
     @inventory = Inventory.find(params[:id])
   end
 
+  def update 
+    @inventory = Inventory.find(params[:id])
+
+    if @inventory.update(inventory_params)
+      redirect_to inventories_path(@inventory), notice: 'Inventory updated!'
+    else
+      render 'edit'
+    end
+  end
+  
   private
 
   def inventory_params

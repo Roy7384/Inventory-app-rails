@@ -13,6 +13,7 @@
       <td><%= inventory.product %></td>
       <td><%= inventory.quantity %></td>
       <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+      <td><%= button_to 'Delete', inventory_path(inventory), method: :delete %></td>
     </tr>
     <% end %>
   </tbody>

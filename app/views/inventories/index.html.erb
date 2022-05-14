@@ -16,5 +16,16 @@
       <td><%= button_to 'Delete', inventory_path(inventory), method: :delete %></td>
     </tr>
     <% end %>
+    <tr>
+      <td><h3>Deleted Inventories</h3></td>
+    </tr>
+      <% @deleted_inventories.each do |inventory| %>
+    <tr>
+      <td><%= inventory.product %></td>
+      <td><%= inventory.quantity %></td>
+      <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+      <td><%= button_to 'Recover', inventory_path(inventory), method: :patch %></td>
+    </tr>
+    <% end %>
   </tbody>
 </table>

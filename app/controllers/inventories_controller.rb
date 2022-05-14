@@ -4,6 +4,7 @@ class InventoriesController < ApplicationController
   
   def index
     @inventories = Inventory.all
+    @deleted_inventories = Inventory.only_deleted
   end
 
   def new

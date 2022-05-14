@@ -19,6 +19,10 @@ class InventoriesController < ApplicationController
     end
   end
 
+  def edit
+    @inventory = Inventory.find(params[:id])
+  end
+
   private
 
   def inventory_params

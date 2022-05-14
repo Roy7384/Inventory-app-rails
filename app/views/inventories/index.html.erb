@@ -12,6 +12,7 @@
     <tr>
       <td><%= inventory.product %></td>
       <td><%= inventory.quantity %></td>
+      <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
     </tr>
     <% end %>
   </tbody>

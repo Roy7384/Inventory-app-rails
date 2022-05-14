@@ -13,7 +13,7 @@ class InventoriesController < ApplicationController
   def create 
     @inventory = Inventory.create(inventory_params)
     if @inventory.save
-      redirect_to inventories_path(@inventory), notice: 'Inventory created!'
+      redirect_to inventories_path(@inventory)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class InventoriesController < ApplicationController
     @inventory = Inventory.find(params[:id])
 
     if @inventory.update(inventory_params)
-      redirect_to inventories_path(@inventory), notice: 'Inventory updated!'
+      redirect_to inventories_path(@inventory)
     else
       render 'edit'
     end

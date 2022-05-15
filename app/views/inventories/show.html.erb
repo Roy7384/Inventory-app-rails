@@ -1,4 +1,15 @@
 <h3>You are about to delete product: <%= @inventory.product %></h3>
 <p>Quantity: <%= @inventory.quantity %></p>
-
-<td><%= button_to 'Confirm delete', inventory_path(@inventory), method: :delete %></td>
+<h3>Add a deletion comment</h3>
+<%= form_with model: [@inventory, @inventory.delete_comments.build] do |form| %>
+  <p>
+    <%= form.label :comment %><br>
+    <%= form.text_field :comment %>
+  </p>
+  <p>
+    <%= form.submit %>      
+  </p>
+<% end %>
+  
+<%= button_to 'Confirm delete', inventory_path(@inventory), method: :delete %>
+<%= link_to 'Back', inventories_path %>

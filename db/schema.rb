@@ -10,14 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_14_215119) do
+ActiveRecord::Schema.define(version: 2022_05_15_003453) do
+
+  create_table "delete_comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "inventory_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["inventory_id"], name: "index_delete_comments_on_inventory_id"
+  end
 
   create_table "inventories", force: :cascade do |t|
     t.string "product"
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "deleted_at"
+    t.datetime "deleted_at", precision: 6
   end
 
+  add_foreign_key "delete_comments", "inventories"
 end

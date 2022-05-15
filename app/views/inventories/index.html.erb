@@ -23,7 +23,6 @@
     <tr>
       <td><%= inventory.product %></td>
       <td><%= inventory.quantity %></td>
-      <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
       <td><%= button_to 'Recover', inventory_path(inventory), method: :patch %></td>
     </tr>
     <% end %>

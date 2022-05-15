@@ -1,6 +1,10 @@
 class InventoriesController < ApplicationController
 
   protect_from_forgery with: :null_session
+
+  def show
+    @inventory = Inventory.find(params[:id])
+  end
   
   def index
     @inventories = Inventory.all

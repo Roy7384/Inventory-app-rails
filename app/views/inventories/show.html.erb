@@ -1,0 +1,4 @@
+<h3>You are about to delete product: <%= @inventory.product %></h3>
+<p>Quantity: <%= @inventory.quantity %></p>
+
+<td><%= button_to 'Confirm delete', inventory_path(@inventory), method: :delete %></td>

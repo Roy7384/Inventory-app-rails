@@ -1,5 +1,6 @@
 <h3>You are about to delete product: <%= @inventory.product %></h3>
 <p>Quantity: <%= @inventory.quantity %></p>
+
 <h3>Add a deletion comment</h3>
 <%= form_with model: [@inventory, @inventory.delete_comments.build] do |form| %>
   <p>
@@ -10,6 +11,16 @@
     <%= form.submit "Delete"%>      
   </p>
 <% end %>
-  
 <%= button_to 'Delete without comment', inventory_path(@inventory), method: :delete %>
+  
+<h4>Deletion comments</h4>
+<% @inventory.delete_comments.each do |comment| %>
+  <% if comment.body %>
+    <p>
+      Comment: "<%= comment.body %>"; Deleted at: <%= comment.created_at %>
+    </p>
+  <% end %>
+<% end %>
+
+  
 <%= link_to 'Back', inventories_path %>

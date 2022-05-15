@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "inventories#index"
 
-  resources :inventories
+  resources :inventories do
+    resources :delete_comments
+  end 
+  
 end

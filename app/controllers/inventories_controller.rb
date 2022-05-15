@@ -25,8 +25,14 @@ class InventoriesController < ApplicationController
   end
 
   def update 
-    @inventory = Inventory.find(params[:id])
+    @inventory = Inventory.with_deleted.find(params[:id])
 
+    if @inventory.deleted_at
+      @inventory.recover
+      redirect_to inventories_path(@inventory)
+      return
+    end
+    
     if @inventory.update(inventory_params)
       redirect_to inventories_path(@inventory)
     else

@@ -1,25 +1,12 @@
-# Rails on Replit
+# Inventory Tracking Rails App
 
-This is a template to get you started with Rails on Replit. It's ready to go so you can just hit run and start coding!
-
-This template was generated using `rails new` (after you install the `rails` gem from the packager sidebar) so you can always do that if you prefer to set it up from scratch. The only had two make config changes we had to make to run it on Replit:
-
-- bind the app on `0.0.0.0` instead of `localhost` (see `.replit`)
-- allow `*.repl.co` hosts (see `config/environments/development.rb`)
-- allow the app to be iframed on `replit.com` (see `config/application.rb`)
+This is a solution to the Fall 2022 Shopify Developer Intern Back-end Challenge. It's an inventory tracking web application with basic CRUD functionalities. Additional features are to allow adding deletion comments when deleting an item and and the ability to uncover a deleted item. 
 
 ## Running the app
-
-Simple hit run! You can edit the run command from the `.replit` file.
-
-## Running commands
-
-Start every command with `bundle exec` so that it runs in the context of the installed gems environment. The console pane will give you output from the server but you can run arbitrary command from the shell without stopping the server.
-
-## Database
-
-SQLite would work in development but we don't recommend running it in production. Instead look into using the built-in [Replit database](http://docs.replit.com/misc/database). Otherwise you are welcome to connect databases from your favorite provider. 
-
-## Help
-
-If you need help you might be able to find an answer on our [docs](https://docs.replit.com) page. Feel free to report bugs and give us feedback [here](https://replit.com/support).
+- The app is exported to Replit, visit [here](https://replit.com/@Roy7384/Inventory-app-rails?v=1) and click run.
+- Setup for running the app locally
+  1. Clone this repo
+  2. Run `bundle install` to install dependencies
+  3. Run `rails db:reset` to create sqlite3 database
+  4. Run `rails server` to start the server
+  5. Visit https://localhost:3000

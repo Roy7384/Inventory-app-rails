@@ -1,4 +1,7 @@
 class Inventory < ApplicationRecord
+
+  has_many :delete_comments
+  
   acts_as_paranoid
 
   validates :product, presence: true, uniqueness: { case_sensitive: false, message: 'already exist' }

@@ -5,8 +5,12 @@ This is a solution to the Fall 2022 Shopify Developer Intern Back-end Challenge.
 ## Running the app
 - The app is exported to Replit, visit [here](https://replit.com/@Roy7384/Inventory-app-rails?v=1) and click run.
 - Setup for running the app locally
-  1. Clone this repo
-  2. Run `bundle install` to install dependencies
-  3. Run `rails db:reset` to create sqlite3 database
-  4. Run `rails server` to start the server
-  5. Visit https://localhost:3000
+  * Clone this repo
+  * Run `bundle install` to install dependencies
+  * Run `rails db:reset db:migrate` to initialize the sqlite3 database
+  * Run `rails server` to start the server
+  * Visit https://localhost:3000
+
+## Ruby on Rails Versions
+- ruby 3.0.3
+- rails 7.0.1

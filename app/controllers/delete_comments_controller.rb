@@ -1,0 +1,2 @@
+class DeleteCommentsController < ApplicationController
+end

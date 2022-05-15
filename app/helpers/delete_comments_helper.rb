@@ -1,0 +1,2 @@
+module DeleteCommentsHelper
+end
